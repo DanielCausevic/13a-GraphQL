@@ -1,10 +1,10 @@
-const { PubSub } = require('graphql-subscriptions');
-const { books, authors } = require('./data');
+import { PubSub } from 'graphql-subscriptions';
+import { books, authors } from './data.js';
 
 const pubsub = new PubSub();
 const BOOK_ADDED = 'BOOK_ADDED';
 
-module.exports = {
+export default {
   Query: {
     books: () => books,
     book: (_, { id }) => books.find(b => b.id === id),
